@@ -55,7 +55,7 @@ class CustomPomodoro:
         
         self.start_button.config(state=tk.DISABLED)
         self.stop_button.config(state=tk.NORMAL)
-        self.status_label.config(text="workworkworkworkwork!")
+        self.status_label.config(text="workworkworkwork!")
         
         # Start the blinking dot
         self.blinking_dot()
@@ -128,14 +128,14 @@ class CustomPomodoro:
         if not self.running:
             return
         self.current_phase = "break"
-        self.status_label.config(text="Shol kon!")
+        self.status_label.config(text="shol kon!")
         self.remaining_time = self.break_duration
         self.update_timer()
         
         # Display a full-screen green overlay during the break
         break_overlay = tk.Toplevel(self.root)
         break_overlay.geometry(f"{self.root.winfo_screenwidth()}x{self.root.winfo_screenheight()}+0+0")
-        break_overlay.configure(bg='green')
+        break_overlay.configure(bg='black')
         break_overlay.overrideredirect(True)
         break_overlay.attributes("-topmost", True)
         break_overlay.after(self.break_duration * 1000, break_overlay.destroy)
@@ -143,7 +143,7 @@ class CustomPomodoro:
     def reset_cycle(self):
         self.running = False
         self.current_phase = None
-        self.status_label.config(text="Suck it up n do it again!")
+        self.status_label.config(text="suck it up n do it agian!")
         self.start_button.config(state=tk.NORMAL)
         self.stop_button.config(state=tk.DISABLED)
         if self.dot:
